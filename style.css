@@ -1,0 +1,61 @@
+body {
+    background-color: #2F2C2C;
+}
+
+h1 {
+    color:white;
+    text-align: center;
+    text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;  
+}
+
+.search {
+    text-align: center;
+    
+    /* width: 50%; */
+}
+
+.input {
+    background-color: black;
+    text-align: center;
+    color: greenyellow;
+}
+.noInput {
+    background-color: black;
+    text-align: center;
+    color: greenyellow;
+    width: 50%;
+}
+
+.results {
+    color: white;
+    outline-style: solid;
+    outline-color: white;
+    outline-width: 1px;
+    /* margin-left: 350px;  */
+    /* width: 33%; */
+    text-align: center;
+}
+
+.btn {
+    text-align: center;
+    color: red;
+}
+
+
+
+
+/* <!-- 
+
+User Story: I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.
+
+User Story: I can click a button to see a random Wikipedia entry.
+
+Hint #1: Here's a URL you can use to get a random Wikipedia article: https://en.wikipedia.org/wiki/Special:Random.
+
+Hint #2: Here's an entry on using Wikipedia's API: https://www.mediawiki.org/wiki/API:Main_page.
+
+Hint #3: Use this link to experiment with Wikipedia's API. --> */
