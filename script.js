@@ -1,31 +1,44 @@
 $(document).ready(function(){
   var entry;
+  var search;
+  
   $('#random').on('click', function() {
    var random = 'https://en.wikipedia.org/wiki/Special:Random';
 
    window.open(random);
   });
-  function wikiAPI() {
-       //maybe want to access extracts|info|pageprops|revisions in parameters of prop (query sub/module) e.g. prop:info<?>
+ 
+  $('#input').keypress(function (e) {
+    search = $('#input').val();
+    console.log(search);
+    if(e.which == 13) {
       $.ajax({
-        url: 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=jsonfm&formatversion=2&continue=',
+        url: 'https://en.wikipedia.org/w/api.php',
         type: 'GET',
         data: {
-          'origin': '*',
+          //https://en.wikipedia.org/w/api.php?action=opensearch&search=api&limit=10&namespace=0&format=jsonfm
+          action: 'opensearch',
+          search: search , //this will actually be user entry
+          limit: 10,
+          origin: '*',
+          prop: 'revisions',
+          rvprop: 'content',
+          format: 'json',
+          formatversion: 2,
+          continue: ''
         },
         success: function(response) {
-          // alert('hello');
-          $('#input').keypress(function (e){
-            if(e.which == 13) {
-              $('#entry').text('poopoo');
-            }
-          })
-          // $('#results').text('hello world');
+          $('#zero').text(response[1][0]);
+          $('#one').text(response[1][1]);
+          //if you want to test success of response do below;
+          // alert('hello');        
               } 
          });
+    
     }
-
-wikiAPI();  
+    
+       
+    });
 
 });
 
