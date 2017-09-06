@@ -1,41 +1,73 @@
 body {
     background-color: #2F2C2C;
+    background-image: url(http://cdn.mysitemyway.com/icons-watermarks/flat-circle-white-on-black/foundation/foundation_magnifying-glass/foundation_magnifying-glass_flat-circle-white-on-black_512x512.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right; 
+    
 }
 
 h1 {
+    font-family: Courier New, Courier, monospace;
+    font-size: 60px;
     color:white;
-    text-align: center;
+    text-align: left;
     text-shadow:
-    -2px -2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    2px 2px 0 #000;  
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000;  
 }
 
 .search {
-    text-align: center;
+    text-align: left;
     
 }
 
 .input {
     background-color: black;
-    text-align: center;
     color: greenyellow;
+    font-family: Courier New, Courier, monospace;
+    font-size: 50px;
+    outline-color: greenyellow;
+    outline-style: solid;
+    outline-width: 4px;
+    border-color: transparent;
+    
 }
 
-
+.wrapper {
+    text-align: left;
+}
 .results {
     color: white;
-    outline-style: solid;
-    outline-color: white;
-    outline-width: 1px;
-    /* margin-left: 350px;  */
-    /* width: 33%; */
-    text-align: center;
+    border-bottom: 1px greenyellow;
+    border-bottom-style: solid;
+    border-top: 1px white dashed;
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 50%;
+    display: inline-block;
+    /* text-align: center;
+    margin-left: 350px;  */
 }
 
 .btn {
-    text-align: center;
+    text-align: left;
+       
+}
+
+.random {
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+    color: hotpink;
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    
 }
 /*
 User Story: I can search Wikipedia entries in a search box and see the resulting Wikipedia entries.

@@ -1,11 +1,21 @@
+$('#zero').hide();
+$('#one').hide();
+$('#two').hide();
+$('#three').hide();
+$('#four').hide();
+$('#five').hide();
+$('#six').hide();
+$('#seven').hide();
+$('#eight').hide();
+$('#nine').hide();
+
 window.onload = function () {
   document.getElementById('input').focus();
+  
 };
 
 $(document).ready(function(){
-  // var search;
-  
-  $('#random').on('click', function() {
+   $('#random').on('click', function() {
    var random = 'https://en.wikipedia.org/wiki/Special:Random';
 
    window.open(random);
@@ -13,7 +23,8 @@ $(document).ready(function(){
  
   $('#input').keypress(function (e) {
     search = $('#input').val();
-    if(e.which == 13) {
+   
+    if (e.which == 13) {
       $.ajax({
         url: 'https://en.wikipedia.org/w/api.php',
         type: 'GET',
@@ -28,19 +39,6 @@ $(document).ready(function(){
           format: 'json',
           formatversion: 2,
           continue: ''
-// my code below, dude from FCC above
-        // url: 'https://en.wikipedia.org/w/api.php',
-        // type: 'GET',
-        // data: {
-        //   action: 'opensearch',
-        //   search: search,
-        //   limit: 10,
-        //   origin: '*',
-        //   prop: 'revisions',
-        //   rvprop: 'content',
-        //   format: 'json',
-        //   formatversion: 2,
-        //   continue: ''
         },
         success: function(response) {
           var title = response.query.search[0].title;          
@@ -63,47 +61,65 @@ $(document).ready(function(){
           var snippet6 = response.query.search[6].snippet;
           var snippet7 = response.query.search[7].snippet;
           var snippet8 = response.query.search[8].snippet;
-          var snippet9 = response.query.search[9].snippet;
-          
-          console.log(title);          
+          var snippet9 = response.query.search[9].snippet;      
           var url = 'https://en.wikipedia.org/wiki/';
-          console.log(url);
+          
           //There's some way to use a for loop... Right?
           // var link;
           // for(i = 0; i < 10; i++) {
           // var link = response.query.search[i].title;
           // return 
-          $('#zero').html('<a href=\''   + url + title +'\'>' + title + '</a>' + '<br>' + snippet + '...');
-          $('#one').html('<a href=\''   + url + title1 +'\'>' + title1 + '</a>' + '<br>' + snippet1 + '...');
-          $('#two').html('<a href=\''   + url + title2 +'\'>' + title2 + '</a>' + '<br>' + snippet2 + '...');      
-          $('#three').html('<a href=\''   + url + title3 +'\'>' + title3 + '</a>' + '<br>' + snippet3 + '...')  ; 
-          $('#four').html('<a href=\''   + url + title4 +'\'>' + title4 + '</a>' + '<br>' + snippet4 + '...')  ; 
-          $('#five').html('<a href=\''   + url + title5 +'\'>' + title5 + '</a>' + '<br>' + snippet5 + '...')  ; 
-          $('#six').html('<a href=\''   + url + title6 +'\'>' + title6 + '</a>' + '<br>' + snippet6 + '...')  ; 
-          $('#seven').html('<a href=\''   + url + title7 +'\'>' + title7 + '</a>' + '<br>' + snippet7 + '...')  ; 
-          $('#eight').html('<a href=\''   + url + title8 +'\'>' + title8 + '</a>' + '<br>' + snippet8 + '...')  ; 
-          $('#nine').html('<a href=\''   + url + title9 +'\'>' + title9 + '</a>' + '<br>' + snippet9 + '...')  ; 
-          
-          // $('#zero').html('<a href=\''   + url + link +'\'>' + title + '</a>' + '<br>' + snippet + '...');
-          // $('#one').text(response.query.search[1].title);
-          // $('#two').text(response.query.search[2].title); 
-          // $('#three').text(response.query.search[3].title); 
-          // $('#four').text(response.query.search[4].title); 
-          // $('#five').text(response.query.search[5].title); 
-          // $('#six').text(response.query.search[6].title); 
-          // $('#seven').text(response.query.search[7].title); 
-          // $('#eight').text(response.query.search[8].title); 
-          // $('#nine').text(response.query.search[9].title);      
-              } 
-         });
-    
-      }
-    
-       
-  });
+          $('#zero').html('<a href=\''   + url + title +'\'>' + title + '</a>' + '<br>' + snippet + ' ...');
+          $('#one').html('<a href=\''   + url + title1 +'\'>' + title1 + '</a>' + '<br>' + snippet1 + ' ...');
+          $('#two').html('<a href=\''   + url + title2 +'\'>' + title2 + '</a>' + '<br>' + snippet2 + ' ...');      
+          $('#three').html('<a href=\''   + url + title3 +'\'>' + title3 + '</a>' + '<br>' + snippet3 + ' ...')  ; 
+          $('#four').html('<a href=\''   + url + title4 +'\'>' + title4 + '</a>' + '<br>' + snippet4 + ' ...')  ; 
+          $('#five').html('<a href=\''   + url + title5 +'\'>' + title5 + '</a>' + '<br>' + snippet5 + ' ...')  ; 
+          $('#six').html('<a href=\''   + url + title6 +'\'>' + title6 + '</a>' + '<br>' + snippet6 + ' ...')  ; 
+          $('#seven').html('<a href=\''   + url + title7 +'\'>' + title7 + '</a>' + '<br>' + snippet7 + ' ...')  ; 
+          $('#eight').html('<a href=\''   + url + title8 +'\'>' + title8 + '</a>' + '<br>' + snippet8 + ' ...')  ; 
+          $('#nine').html('<a href=\''   + url + title9 +'\'>' + title9 + '</a>' + '<br>' + snippet9 + ' ...')  ;
+          $('#zero').show();
+          $('#one').show();
+          $('#two').show();
+          $('#three').show();
+          $('#four').show();
+          $('#five').show();
+          $('#six').show();
+          $('#seven').show();
+          $('#eight').show();
+          $('#nine').show();  
+           
+              }
 
+          
+          
+         });
+
+         if (response.query.searchinfo.totalhits === 0) {
+          alert('poop');
+        }
+      }  
+  });
 });
 
+
+
+
+
+// my code below, dude from FCC above
+        // url: 'https://en.wikipedia.org/w/api.php',
+        // type: 'GET',
+        // data: {
+        //   action: 'opensearch',
+        //   search: search,
+        //   limit: 10,
+        //   origin: '*',
+        //   prop: 'revisions',
+        //   rvprop: 'content',
+        //   format: 'json',
+        //   formatversion: 2,
+        //   continue: ''
 
 
 
