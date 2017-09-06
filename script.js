@@ -1,5 +1,9 @@
+window.onload = function () {
+  document.getElementById('input').focus();
+};
+
 $(document).ready(function(){
-  var search;
+  // var search;
   
   $('#random').on('click', function() {
    var random = 'https://en.wikipedia.org/wiki/Special:Random';
@@ -39,8 +43,21 @@ $(document).ready(function(){
         //   continue: ''
         },
         success: function(response) {
-          $('#zero').text(response[1][0]);
-          $('#one').text(response[1][1]);     
+          var title = response.query.search[0].title;
+          console.log(title);          
+          var url = 'https://en.wikipedia.org/wiki/'
+          console.log(url);
+          $('#zero').html('<a href=\''   + url + title +'\'>' + title + '</a>' );
+          // console.log(document.getElementById('zero'));
+          $('#one').text(response.query.search[1].title);
+          $('#two').text(response.query.search[2].title); 
+          $('#three').text(response.query.search[3].title); 
+          $('#four').text(response.query.search[4].title); 
+          $('#five').text(response.query.search[5].title); 
+          $('#six').text(response.query.search[6].title); 
+          $('#seven').text(response.query.search[7].title); 
+          $('#eight').text(response.query.search[8].title); 
+          $('#nine').text(response.query.search[9].title);      
               } 
          });
     
