@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  var entry;
   var search;
   
   $('#random').on('click', function() {
@@ -10,35 +9,45 @@ $(document).ready(function(){
  
   $('#input').keypress(function (e) {
     search = $('#input').val();
-    console.log(search);
     if(e.which == 13) {
       $.ajax({
         url: 'https://en.wikipedia.org/w/api.php',
         type: 'GET',
         data: {
-          //https://en.wikipedia.org/w/api.php?action=opensearch&search=api&limit=10&namespace=0&format=jsonfm
-          action: 'opensearch',
-          search: search , //this will actually be user entry
-          limit: 10,
+          action: 'query',
+          list: 'search',
+          srsearch: '"' + search +'"',
           origin: '*',
-          prop: 'revisions',
-          rvprop: 'content',
+          prop: 'info',
+          inprop: 'url',
+          utf8:'',
           format: 'json',
           formatversion: 2,
           continue: ''
+// my code below, dude from FCC above
+        // url: 'https://en.wikipedia.org/w/api.php',
+        // type: 'GET',
+        // data: {
+        //   action: 'opensearch',
+        //   search: search,
+        //   limit: 10,
+        //   origin: '*',
+        //   prop: 'revisions',
+        //   rvprop: 'content',
+        //   format: 'json',
+        //   formatversion: 2,
+        //   continue: ''
         },
         success: function(response) {
           $('#zero').text(response[1][0]);
-          $('#one').text(response[1][1]);
-          //if you want to test success of response do below;
-          // alert('hello');        
+          $('#one').text(response[1][1]);     
               } 
          });
     
-    }
+      }
     
        
-    });
+  });
 
 });
 
