@@ -1,20 +1,28 @@
-<!DOCTYPE htmade divs for results. api works.ml>
+<!DOCTYPE html>
 <html lang="en">
+       
+        
 <head>
     <meta charset="utf-8">
     <title>WikidSearch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css"> 
 </head>
 
  <body>
+   <div class='container-fluid'>
     <script src="jquery-3.2.1.min.js"></script>
     <h1>"Wikid" Wikipedia Search</h1>
     <div class="search"id="search"> <input class='input'id='input'placeholder='Search Wikipedia...'size='20'></div>
+
+   
 <br>
+<div id='btn'class='btn'><button id='random'class='random' >Or... A Random Wikipedia Entry</button></div>
 <br>
-    <div id='btn'class='btn'><button id='random'class='random' >Random Wikipedia Entry</button></div>
+<div id='errorBlank' class='results'></div>
+<div id='errorSearch'class='results'></div> 
     <div class='wrapper'>    
 
      <br>
@@ -48,6 +56,7 @@
      <div id='nine'class='results'></div>
      <script src="script.js"></script>
     </div>
+</div>
 </body>
 </html>
 <!-- 

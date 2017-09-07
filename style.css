@@ -4,19 +4,20 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right; 
+    background-position-y: 250px;
     
 }
 
 h1 {
     font-family: Courier New, Courier, monospace;
     font-size: 60px;
-    color:white;
-    text-align: left;
+    color:hotpink;
+    text-align: center;
     text-shadow:
     -3px -3px 0 #000,
     3px -3px 0 #000,
     -3px 3px 0 #000,
-    3px 3px 0 #000;  
+    3px 3px 0 #000; 
 }
 
 .search {
@@ -28,11 +29,12 @@ h1 {
     background-color: black;
     color: greenyellow;
     font-family: Courier New, Courier, monospace;
-    font-size: 50px;
+    font-size: 30px;
     outline-color: greenyellow;
     outline-style: solid;
     outline-width: 4px;
     border-color: transparent;
+    margin-left: 20px;
     
 }
 
@@ -46,20 +48,24 @@ h1 {
     border-top: 1px white dashed;
     background-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 50%;
+    width: 400px;
     display: inline-block;
+    margin-left: 16px;
+    
     /* text-align: center;
     margin-left: 350px;  */
 }
 
-.btn {
-    text-align: left;
+/* .btn {
+    text-align: center;
        
-}
+} */
 
 .random {
     font-size: 25px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin-left: 16px;
 }
 
 a {
